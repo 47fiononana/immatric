@@ -1,0 +1,1715 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (127.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (121.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20180903094235)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180903094235"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (124.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateAdminUsers (20180906065059)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906065059"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateActiveAdminComments (20180906065102)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_type" varchar, "resource_id" integer, "author_type" varchar, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906065102"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (113.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-06 06:54:07.754411"], ["updated_at", "2018-09-06 06:54:07.754411"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (117.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Create (0.3ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$VR0gFTP0bSsuu3THorJ1T.rXuid.ejlk.XcoHr5oSZ7nK1pbZvN9C"], ["created_at", "2018-09-06 06:54:22.173411"], ["updated_at", "2018-09-06 06:54:22.173411"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (118.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 09:54:53 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 09:54:53 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (1.4ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (119.4ms)
+Completed 200 OK in 7204ms (Views: 7177.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 09:55:11 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mvtIvjiwjJhj6jJQTlIKzKpUfza6TX1R5nUOiGtOJhMNJk5icu3RqnWfwMvKrrUXmclpfwgmGd607VBdqh+mFw==", "admin_user"=>{"email"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mvtIvjiwjJhj6jJQTlIKzKpUfza6TX1R5nUOiGtOJhMNJk5icu3RqnWfwMvKrrUXmclpfwgmGd607VBdqh+mFw==", "admin_user"=>{"email"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (0.8ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (51.6ms)
+Completed 200 OK in 174ms (Views: 172.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 09:55:25 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aVKwkDx4HHcs4h7vCGpxaUm8qU40vx0PUPO2pBq2pxP+j7ZMdiVBRTqX7HSMls6yeiG/B4bUeYACa+hx2+cnFw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 331ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 09:55:25 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (220.1ms)
+Completed 200 OK in 273ms (Views: 245.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 10:07:07 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 407ms (Views: 390.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-09-06 10:30:02 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (1947.4ms)
+Completed 200 OK in 3160ms (Views: 2032.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2018-09-06 10:30:29 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (98.3ms)
+Completed 200 OK in 151ms (Views: 138.9ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateVehicules (20180906080748)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180906080748_create_vehicules.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "vehicules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "owne_name" varchar, "N°cin" integer, "vehicules_type" varchar, "mark" varchar, "color" varchar, "N°engine" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906080748_create_vehicules.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906080748"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (127.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (31.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/admin/dashboard" for 127.0.0.1 at 2018-09-06 11:17:25 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (1636.5ms)
+Completed 200 OK in 1733ms (Views: 1671.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:17:30 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (360.8ms)
+Completed 200 OK in 423ms (Views: 381.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:17:33 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (355.9ms)
+Completed 200 OK in 435ms (Views: 400.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:19:26 +0300
+Processing by Admin::VehiculesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yb4xBcTSBtLkin2/de4BaL3a01XSQkSmditqwdKyv1ruK92DK0UlIwhNIZDxXXpGHHj/uFUgFXWltyAzaM549g==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"6", "date(4i)"=>"10", "date(5i)"=>"04", "owne_name"=>"tina", "N°cin"=>"1020140125651", "vehicules_type"=>"fiara", "mark"=>"toyota", "color"=>"#ea1414", "N°engine"=>"102"}, "commit"=>"Create Vehicule"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :owne_name
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Create (1.8ms)[0m  [1m[32mINSERT INTO "vehicules" ("date", "N°cin", "vehicules_type", "mark", "color", "N°engine", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2018-09-06 10:04:00"], ["N°cin", 1020140125651], ["vehicules_type", "fiara"], ["mark", "toyota"], ["color", "#ea1414"], ["N°engine", "102"], ["created_at", "2018-09-06 08:19:26.333229"], ["updated_at", "2018-09-06 08:19:26.333229"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (253.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/1
+Completed 302 Found in 351ms (ActiveRecord: 255.5ms)
+
+
+Started GET "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:19:26 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.3ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (451.7ms)
+Completed 200 OK in 488ms (Views: 479.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/vehicules/1/edit" for 127.0.0.1 at 2018-09-06 11:19:40 +0300
+Processing by Admin::VehiculesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (1.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Vehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/edit.html.arb (221.0ms)
+Completed 200 OK in 267ms (Views: 261.4ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:20:00 +0300
+Processing by Admin::VehiculesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t9q9JP/zPps/rwVzw3GjTiHu2uaNoF5oqmE5GgtGExGQT1GiEGQdatNoWVxHwthggEz2CwrCD7t5/XPosTrUvQ==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"6", "date(4i)"=>"10", "date(5i)"=>"04", "owne_name"=>"ranto", "N°cin"=>"1020140125651", "vehicules_type"=>"fiara", "mark"=>"toyota", "color"=>"#ea1414", "N°engine"=>"102"}, "commit"=>"Update Vehicule", "id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :owne_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/1
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:20:00 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.4ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (187.0ms)
+Completed 200 OK in 211ms (Views: 198.2ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:21:07 +0300
+Processing by Admin::VehiculesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j/IDsb07rPBe0waFGFbLZTy5JUIBpeHZa72/eK73WdioZ+83UqyPAbIUWqqc5bBLnRsJr4bHsAq4IfWKFIuedA==", "id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Destroy (1.4ms)[0m  [1m[31mDELETE FROM "vehicules" WHERE "vehicules"."id" = ?[0m  [["id", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (119.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules
+Completed 302 Found in 168ms (ActiveRecord: 122.1ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:21:07 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (160.1ms)
+Completed 200 OK in 167ms (Views: 162.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:21:16 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (229.6ms)
+Completed 200 OK in 254ms (Views: 240.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:21:37 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (170.9ms)
+Completed 200 OK in 197ms (Views: 174.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:22:24 +0300
+Processing by Admin::VehiculesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DxJoaf4OXj/dMiDRO5XamdMO6SJ+NSxSiu+kWBSRcN8oh4TvEZl9zjH1fP6/JqG3cqzFz/lXfYFZc+6qru23cw==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"6", "date(4i)"=>"10", "date(5i)"=>"00", "owne_name"=>"ranto", "N°cin"=>"102102102", "vehicules_type"=>"fiara", "mark"=>"toyota", "color"=>"#000000", "N°engine"=>"102"}, "commit"=>"Create Vehicule"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Create (0.7ms)[0m  [1m[32mINSERT INTO "vehicules" ("date", "owne_name", "N°cin", "vehicules_type", "mark", "color", "N°engine", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2018-09-06 10:00:00"], ["owne_name", "ranto"], ["N°cin", 102102102], ["vehicules_type", "fiara"], ["mark", "toyota"], ["color", "#000000"], ["N°engine", "102"], ["created_at", "2018-09-06 08:22:24.948902"], ["updated_at", "2018-09-06 08:22:24.948902"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (209.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/2
+Completed 302 Found in 261ms (ActiveRecord: 210.9ms)
+
+
+Started GET "/admin/vehicules/2" for 127.0.0.1 at 2018-09-06 11:22:25 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (162.2ms)
+Completed 200 OK in 171ms (Views: 165.1ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (151.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (117.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20180903094235)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:39
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180903094235_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180903094235"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateAdminUsers (20180906065059)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:5
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  ↳ db/migrate/20180906065059_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906065059"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (108.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateActiveAdminComments (20180906065102)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_type" varchar, "resource_id" integer, "author_type" varchar, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  ↳ db/migrate/20180906065102_create_active_admin_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906065102"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateVehicules (20180906080748)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "vehicules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "owner_name" varchar, "N°cin" integer, "vehicules_type" varchar, "mark" varchar, "color" varchar, "N°engine" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180906080748_create_vehicules.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180906080748"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-06 08:23:37.528485"], ["updated_at", "2018-09-06 08:23:37.528485"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (72.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 11:23:57 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 19ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 11:23:57 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (1.0ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (162.5ms)
+Completed 200 OK in 689ms (Views: 662.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 11:24:13 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+AbkQXictwoW+YLCK+e3wpc1R1czEkAsZUbjfYYdg5XfkwjHlwuU+/o+3u2vVMzsNpdrurRwEf+22qmPPGFEOQ==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 36ms (ActiveRecord: 0.7ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+AbkQXictwoW+YLCK+e3wpc1R1czEkAsZUbjfYYdg5XfkwjHlwuU+/o+3u2vVMzsNpdrurRwEf+22qmPPGFEOQ==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (4.0ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (39.2ms)
+Completed 200 OK in 464ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 11:24:21 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PHxsTsJJn+p+ImBz+c+q6mQfIFcko8TY8/mPwU31Sgcb6YDILd68G5LlPFx9fNHExb0MuqPBlQsgZcUz94mNqw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PHxsTsJJn+p+ImBz+c+q6mQfIFcko8TY8/mPwU31Sgcb6YDILd68G5LlPFx9fNHExb0MuqPBlQsgZcUz94mNqw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (0.8ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (31.0ms)
+Completed 200 OK in 252ms (Views: 119.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Create (9.8ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$8TYcCB36kQHprwwSEHmKPegHTd1bgzLvyRz/9ou19nScemt99q6VS"], ["created_at", "2018-09-06 08:24:54.491059"], ["updated_at", "2018-09-06 08:24:54.491059"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (99.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 11:25:01 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (2.9ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (52.9ms)
+Completed 200 OK in 157ms (Views: 153.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 11:25:13 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Egafj0ORv64hnFJ1UR9/9QsaYWgDoHandjTTCHodp/M1k3MJrAacX81bDlrVrATbqrhNhYTCJ3SlqJn6wGFgXw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 219ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 11:25:13 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (95.0ms)
+Completed 200 OK in 147ms (Views: 121.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:25:15 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (187.2ms)
+Completed 200 OK in 221ms (Views: 199.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:25:21 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (161.5ms)
+Completed 200 OK in 216ms (Views: 167.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:26:46 +0300
+Processing by Admin::VehiculesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B0jqFOnlGoHp/rmucPQAHyXc041IhizZrH6KVuBbCU9fI0xfRQqdGlN68XiHDOls97t+JMW66/WNu5WH14MX2A==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"9", "date(4i)"=>"10", "date(5i)"=>"18", "owner_name"=>"santatra", "N°cin"=>"102102103", "vehicules_type"=>"H3", "mark"=>"Hummer", "color"=>"#000000", "N°engine"=>"502"}, "commit"=>"Create Vehicule"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Create (0.6ms)[0m  [1m[32mINSERT INTO "vehicules" ("date", "owner_name", "N°cin", "vehicules_type", "mark", "color", "N°engine", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2018-09-09 10:18:00"], ["owner_name", "santatra"], ["N°cin", 102102103], ["vehicules_type", "H3"], ["mark", "Hummer"], ["color", "#000000"], ["N°engine", "502"], ["created_at", "2018-09-06 08:26:46.223684"], ["updated_at", "2018-09-06 08:26:46.223684"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (242.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/1
+Completed 302 Found in 294ms (ActiveRecord: 243.9ms)
+
+
+Started GET "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:26:46 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (1.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (178.2ms)
+Completed 200 OK in 190ms (Views: 181.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/admin/vehicules/1/edit" for 127.0.0.1 at 2018-09-06 11:27:08 +0300
+Processing by Admin::VehiculesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Vehicule Load (0.0ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/edit.html.arb (181.9ms)
+Completed 200 OK in 191ms (Views: 185.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:27:33 +0300
+Processing by Admin::VehiculesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s1cUH0Lg7H0nO7E+KSrrL2G7By6+kDzsEyXtgjtJAzrrPLJU7g9r5p2/+eje0gJcs9yqhzOs+8Ay4PJTDJEdrQ==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"9", "date(4i)"=>"10", "date(5i)"=>"18", "owner_name"=>"santatra", "N°cin"=>"102102103", "vehicules_type"=>"H3", "mark"=>"Hummer", "color"=>"#000000", "N°engine"=>"502"}, "commit"=>"Update Vehicule", "id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/1
+Completed 302 Found in 20ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/vehicules/1" for 127.0.0.1 at 2018-09-06 11:27:33 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (180.4ms)
+Completed 200 OK in 188ms (Views: 184.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2018-09-06 11:28:23 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (120.1ms)
+Completed 200 OK in 136ms (Views: 127.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:28:29 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (206.2ms)
+Completed 200 OK in 226ms (Views: 217.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:29:03 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (186.3ms)
+Completed 200 OK in 197ms (Views: 192.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:30:48 +0300
+Processing by Admin::VehiculesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L80oNJO9Inp5LSlT/7OHJ/k+78NY58qSDez9IVmMmHZ3po5/P1Kl4cOpYYUIS25UK1lCatXbDb4sKeLwblSG4Q==", "vehicule"=>{"date(1i)"=>"2018", "date(2i)"=>"9", "date(3i)"=>"5", "date(4i)"=>"07", "date(5i)"=>"09", "owner_name"=>"kava", "N°cin"=>"502306478", "vehicules_type"=>"4*4", "mark"=>"BMW", "color"=>"#e00b0b", "N°engine"=>"789"}, "commit"=>"Create Vehicule"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Create (3.2ms)[0m  [1m[32mINSERT INTO "vehicules" ("date", "owner_name", "N°cin", "vehicules_type", "mark", "color", "N°engine", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2018-09-05 07:09:00"], ["owner_name", "kava"], ["N°cin", 502306478], ["vehicules_type", "4*4"], ["mark", "BMW"], ["color", "#e00b0b"], ["N°engine", "789"], ["created_at", "2018-09-06 08:30:48.534635"], ["updated_at", "2018-09-06 08:30:48.534635"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (260.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/vehicules/2
+Completed 302 Found in 296ms (ActiveRecord: 264.1ms)
+
+
+Started GET "/admin/vehicules/2" for 127.0.0.1 at 2018-09-06 11:30:48 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (177.8ms)
+Completed 200 OK in 185ms (Views: 180.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:31:19 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (135.3ms)
+Completed 200 OK in 143ms (Views: 138.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 11:31:31 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (166.2ms)
+Completed 200 OK in 176ms (Views: 171.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:31:44 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (158.9ms)
+Completed 200 OK in 165ms (Views: 160.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/vehicules?utf8=%E2%9C%93&q%5Bowner_name_contains%5D=kava&commit=Filter&order=id_desc" for 127.0.0.1 at 2018-09-06 11:31:55 +0300
+Processing by Admin::VehiculesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"owner_name_contains"=>"kava"}, "commit"=>"Filter", "order"=>"id_desc"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."owner_name" LIKE '%kava%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."owner_name" LIKE '%kava%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules" WHERE "vehicules"."owner_name" LIKE '%kava%'[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."owner_name" LIKE '%kava%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.3ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."owner_name" LIKE '%kava%' ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (154.5ms)
+Completed 200 OK in 162ms (Views: 156.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 11:32:50 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (142.2ms)
+Completed 200 OK in 160ms (Views: 147.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:32:51 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.3ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (227.3ms)
+Completed 200 OK in 236ms (Views: 230.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/vehicules?utf8=%E2%9C%93&q%5BN%C2%B0engine_contains%5D=502&commit=Filter&order=id_desc" for 127.0.0.1 at 2018-09-06 11:33:06 +0300
+Processing by Admin::VehiculesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"N°engine_contains"=>"502"}, "commit"=>"Filter", "order"=>"id_desc"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."N°engine" LIKE '%502%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."N°engine" LIKE '%502%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules" WHERE "vehicules"."N°engine" LIKE '%502%'[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."N°engine" LIKE '%502%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."N°engine" LIKE '%502%' ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (145.6ms)
+Completed 200 OK in 163ms (Views: 150.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:33:49 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (213.7ms)
+Completed 200 OK in 225ms (Views: 219.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/vehicules?utf8=%E2%9C%93&q%5Bcolor_contains%5D=%C2%A0%23000000&commit=Filter&order=id_desc" for 127.0.0.1 at 2018-09-06 11:34:05 +0300
+Processing by Admin::VehiculesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"color_contains"=>" #000000"}, "commit"=>"Filter", "order"=>"id_desc"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" WHERE "vehicules"."color" LIKE '% #000000%' LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (123.6ms)
+Completed 200 OK in 138ms (Views: 129.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 11:34:10 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (1.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.4ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (204.2ms)
+Completed 200 OK in 228ms (Views: 214.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 16:52:35 +0300
+Started GET "/" for 127.0.0.1 at 2018-09-06 16:52:39 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (123.9ms)
+Completed 200 OK in 5292ms (Views: 5229.0ms | ActiveRecord: 0.0ms)
+
+
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 128ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 16:52:59 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (201.7ms)
+Completed 200 OK in 299ms (Views: 262.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2018-09-06 16:53:16 +0300
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8UoB7/PJN5gyuVbRTDiUM1+LxjgJjZsSFff4mVYSwMSpIaekXyawA4g9Hge7wH1AjexrkYSxXD40MudIYcreUw=="}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 133ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 16:53:16 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 16:53:16 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (0.8ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (76.1ms)
+Completed 200 OK in 215ms (Views: 212.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 16:53:32 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 16:53:32 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (0.7ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (33.0ms)
+Completed 200 OK in 125ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 16:53:34 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 129ms (Views: 127.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 16:56:26 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-06 16:56:26 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (1.1ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (32.5ms)
+Completed 200 OK in 103ms (Views: 102.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-06 16:56:48 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cdw8msO8KAMqMEtuTV7sWJDHpF8UAILD5NRXbv4vXKGkTaJJSB2HrcZMtnI9lgCsZF7fRmMVBAhrTrSnAY/Fvw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 162ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 16:56:48 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (116.0ms)
+Completed 200 OK in 118ms (Views: 117.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 16:56:53 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (27.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (237.6ms)
+Completed 200 OK in 282ms (Views: 242.0ms | ActiveRecord: 31.7ms)
+
+
+Started GET "/admin/vehicules/new" for 127.0.0.1 at 2018-09-06 16:56:59 +0300
+Processing by Admin::VehiculesController#new as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/new.html.arb (240.2ms)
+Completed 200 OK in 257ms (Views: 254.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 17:03:55 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (86.9ms)
+Completed 200 OK in 91ms (Views: 88.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 17:04:02 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (171.8ms)
+Completed 200 OK in 182ms (Views: 175.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/vehicules.csv" for 127.0.0.1 at 2018-09-06 17:04:17 +0300
+Processing by Admin::VehiculesController#index as CSV
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.7ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1000], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 157ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 17:09:13 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (92.5ms)
+Completed 200 OK in 99ms (Views: 95.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:09:14 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 201ms (Views: 197.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/styles/bootstrap4/popper.js.map" for 127.0.0.1 at 2018-09-06 17:09:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/popper.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/styles/bootstrap4/bootstrap.min.js.map" for 127.0.0.1 at 2018-09-06 17:09:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/styles/bootstrap4/bootstrap.min.css.map" for 127.0.0.1 at 2018-09-06 17:09:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.css.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:11:34 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (308.2ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `vehicles_path' for #<#<Class:0x00007f5ada080ae8>:0x00007f5adc2608c0>
+Did you mean?  vehicules_path
+               vehicule_path):
+    59: 				<div class="logo menu_mm"><a href="#">Avision</a></div>
+    60: 				<div class="search">
+    61: 					<form action="#">
+    62: 						<%= form_tag vehicles_path, :method => 'get' do %>
+    63: 						<%= text_field_tag :search, params[:search] %>
+    64: 						<%= submit_tag "Search" %>
+    65: 						<% end %>
+  
+app/views/home/index.html.erb:62:in `_app_views_home_index_html_erb__3960488895606851236_70014108633680'
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 17:19:33 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (379.0ms)
+Completed 200 OK in 403ms (Views: 399.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 17:19:41 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (22.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (159.7ms)
+Completed 200 OK in 176ms (Views: 151.0ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2018-09-06 17:19:48 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (656.6ms)
+Completed 200 OK in 668ms (Views: 660.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-06 17:19:51 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.1ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (162.6ms)
+Completed 200 OK in 173ms (Views: 166.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-06 17:22:04 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (88.6ms)
+Completed 200 OK in 93ms (Views: 90.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:22:05 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/oem/FinalProject/app/views/home/index.html.erb:193: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/home/index.html.erb:193: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:22:37 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 422ms (Views: 420.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/styles/bootstrap4/bootstrap.min.css.map" for 127.0.0.1 at 2018-09-06 17:22:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.css.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/styles/bootstrap4/popper.js.map" for 127.0.0.1 at 2018-09-06 17:22:38 +0300
+Started GET "/styles/bootstrap4/bootstrap.min.js.map" for 127.0.0.1 at 2018-09-06 17:22:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/popper.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:22:59 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/styles/bootstrap4/bootstrap.min.css.map" for 127.0.0.1 at 2018-09-06 17:22:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.css.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/styles/bootstrap4/bootstrap.min.js.map" for 127.0.0.1 at 2018-09-06 17:22:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/bootstrap.min.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/styles/bootstrap4/popper.js.map" for 127.0.0.1 at 2018-09-06 17:23:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/styles/bootstrap4/popper.js.map"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:24:52 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 132ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 17:24:59 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 153ms (Views: 145.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-07 10:33:08 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 976ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (bad URI(is not URI?): file:///home/oem/FinalProject/app/assets/stylesheets/fonts/montserrat-light_[allfont.net].ttf?type=application/x-font-ttf):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___4296412539459783630_47132570918360'
+Started GET "/" for 127.0.0.1 at 2018-09-07 10:39:52 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 189ms (Views: 188.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/drimo/index-9.html" for 127.0.0.1 at 2018-09-07 10:42:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/drimo/index-9.html"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-07 10:42:54 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 124ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/drimo/index-3.html" for 127.0.0.1 at 2018-09-07 10:46:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/drimo/index-3.html"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2018-09-07 10:47:12 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-07 10:47:12 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (1.7ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (173.9ms)
+Completed 200 OK in 471ms (Views: 424.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-07 10:47:31 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9yyxnY9dZstJrLTcln8jEJ09iEZ9lryM979IoinQx8mvdNdIDpokVijGfXQIcLWoicHpUkQB+2/mV0gZ04iPsw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 264ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-07 10:47:32 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (100.5ms)
+Completed 200 OK in 136ms (Views: 132.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-07 10:47:36 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (165.3ms)
+Completed 200 OK in 180ms (Views: 170.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 08:40:58 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 693ms (Views: 686.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-10 08:41:24 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-09-10 08:41:24 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/shared/_links.erb (10.3ms)
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (428.3ms)
+Completed 200 OK in 922ms (Views: 889.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-09-10 08:41:45 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWu811K4HaxIqqP5fJLkdrP7ryLoearL3qR9BhWUmFjr3EaHviXMYhNDIp+xkvWOUkt8eNkMW6NK/ThAAt5Q9g==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 308ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-09-10 08:41:45 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (199.2ms)
+Completed 200 OK in 221ms (Views: 207.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-09-10 08:41:49 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (5.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (144.8ms)
+Completed 200 OK in 171ms (Views: 151.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admin/admin_users/1" for 127.0.0.1 at 2018-09-10 08:41:54 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (1.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (1.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "AdminUser"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (219.0ms)
+Completed 200 OK in 234ms (Views: 220.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/admin/vehicules" for 127.0.0.1 at 2018-09-10 08:42:08 +0300
+Processing by Admin::VehiculesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicules"[0m
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "vehicules" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.2ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" ORDER BY "vehicules"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/index.html.arb (224.3ms)
+Completed 200 OK in 246ms (Views: 231.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/vehicules/2" for 127.0.0.1 at 2018-09-10 08:42:14 +0300
+Processing by Admin::VehiculesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mVehicule Load (0.3ms)[0m  [1m[34mSELECT  "vehicules".* FROM "vehicules" WHERE "vehicules"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Vehicule"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/resource/show.html.arb (133.8ms)
+Completed 200 OK in 145ms (Views: 139.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2018-09-10 08:42:29 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/oem/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activeadmin-1.3.1/app/views/active_admin/page/index.html.arb (126.3ms)
+Completed 200 OK in 131ms (Views: 128.5ms | ActiveRecord: 0.3ms)
+
+

@@ -1,0 +1,46 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#option{
+    display: inline-flex;
+    justify-content: left;
+    width: 100%;
+    margin: auto;
+}
+#option .contact_button{
+    margin: 5px;
+}
+
+.contact_button{
+    background-color: rgba(0, 0, 0, 0.71) !important;
+    color: white !important;
+    padding: 20px 20px 40px 20px !important;
+    border-radius: 50pc !important;
+    margin: 40px;
+}
+.contact_button:hover{
+    background-color: black !important;
+}
+//#option h1{
+//    font-size: 65px;
+//    font-weight: lighter;
+//}
+//.sub_button{
+//    background: #000 !important;
+//    padding: 23px 5px 18px 5px;
+//    border-radius: 50pc;
+//    margin-right: 50px;
+//    left: 0px !important;
+////    position: absolute;
+//}
+.subscribe_background p{
+    color: aliceblue;
+}
+.btn{
+    background-color: #000 !important;
+    color: aliceblue;
+}
+.subscribe_title{
+    color: #555 !important;
+}
